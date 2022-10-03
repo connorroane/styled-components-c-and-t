@@ -1,4 +1,6 @@
 import React from 'react';
+import { Button } from '../components/global/Button';
+import Card from '../components/global/Card';
 import {Page, PageProps } from '../components/global/Page';
 
 interface CardsProps extends PageProps {
@@ -14,7 +16,10 @@ const Cards: React.FC<CardsProps> = ({}: CardsProps) => {
         this is the cards page
       </div>
       <div>
-        {iterator.map((_, index) => <div key={index} >{_}</div>)}
+        {iterator.map((item, index) => <Card itemNumber={item} key={index} />)}
+      </div>
+      <div>
+        <Button>Animate Cards</Button>
       </div>
     </>
   )
